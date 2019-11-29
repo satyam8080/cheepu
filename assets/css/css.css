@@ -1,0 +1,42 @@
+.myaccount {
+  width: 200px;
+  border: 3px solid green;
+  padding: 10px;
+  margin: 10px;
+  
+}
+
+#link {
+  text-decoration:none;
+  border:0;
+  outline:none;
+  /* color: inherit;*/
+}
+
+#space {
+	padding-left: 30px;
+	padding-top: 1px;
+}
+
+ .profile-center {
+	margin-left: 250px;
+	height: 360px;
+	 position: absolute;
+    top: 14px;
+	margin-top: 100px;
+	width: 1000px;
+	padding: 20px;
+	border: 3px solid green;
+
+}
+
+#input {
+	width: 300px;
+	
+}
+
+#number::-webkit-inner-spin-button, 
+#number::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

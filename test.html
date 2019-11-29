@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cheepu</title>
+</head>
+<body>
+<form method=get >
+<input type=text name=name>
+<input type=text name=pass>
+<input type=text name=qwq>
+<input type=submit>
+</form>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '362177161165494',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.3'
+    });
+      
+
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+  	function statusChangeCallback(response) {
+  		// body...
+  		if (response.status==='connected') {
+  			console.log("authenticated and connected");
+  			testAPI();
+  		}else{
+  			console.log("Not login");
+  		}
+  	}
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+function testAPI(argument) {
+	// body...
+	FB.api('me?fields=id,name,email',function(response) {
+		// body...
+		if (response &&  !response.error) {
+		console.log(response);
+		alert(response.name);
+		alert(response.email);
+		}
+	})
+
+}
+</script>	
+
+<fb:login-button 
+  scope="public_profile,email, user_birthday"
+  onlogin="checkLoginState();">
+</fb:login-button>
+</body>
+</html>

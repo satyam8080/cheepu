@@ -1,0 +1,21 @@
+		public function login($data){
+			$user_mobile=$this->input->post('mobile');
+			$user_current_password=$this->input->post('password');
+
+		 	$mobile = $data['mobile'];
+		 	$password = $data['password'];
+		 	$this->db->where('user_mobile',$user_mobile);
+			$this->db->where('user_current_password',$user_current_password);
+				$result =$this->db->get('users');
+		 	
+
+
+		 	if($result->num_rows()){ 
+		 	$query = $this->db->get_where('users',array('user_mobile'=>$mobile));
+        	
+		 		 	return true;
+		 		 }else
+		 		 	return false;
+		 	
+		 		
+		}
